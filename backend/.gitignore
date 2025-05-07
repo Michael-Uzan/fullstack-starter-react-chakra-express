@@ -1,0 +1,32 @@
+# Node modules
+node_modules/
+.pnpm/
+
+# Build output
+dist/
+build/
+
+# Env files
+.env
+.env.local
+
+# IDE/editor folders
+.vscode/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Runtime files
+*.pid
+*.seed
+*.pid.lock
+
+# Logs 
+logs/
+
+# Optional: compiled JS in src (if misconfigured)
+src/**/*.js
+src/**/*.js.map
+
+# Optional: local dev overrides
+*.local.*
