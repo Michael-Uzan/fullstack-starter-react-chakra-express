@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
-
-const todoService = require("./todo.service");
-const logger = require("../../services/logger.service");
+import { logger } from "../../services/logger.service";
+import { todoService } from "./todo.service";
 
 async function getTodos(req: Request, res: Response) {
   try {
@@ -55,7 +54,7 @@ async function addTodo(req: Request, res: Response) {
   }
 }
 
-module.exports = {
+export const todoController = {
   getTodo,
   getTodos,
   deleteTodo,

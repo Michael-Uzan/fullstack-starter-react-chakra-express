@@ -1,11 +1,13 @@
 import { Request, Response } from "express";
+import express from "express";
+import cors from "cors";
+import path from "path";
+import http from "http";
+import { logger } from "./services/logger.service";
 
-const express = require("express");
-// const expressSession = require("express-session");
-const cors = require("cors");
-const path = require("path");
 const app = express();
-const http = require("http").createServer(app);
+const server = http.createServer(app);
+
 // const todoRoutes = require("./api/todo/todo.routes");
 // const authRoutes = require("./api/auth/auth.routes");
 // const userRoutes = require("./api/user/user.routes");
@@ -42,9 +44,8 @@ app.get("/", (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-const logger = require("./services/logger.service");
 const port = process.env.PORT || 3030;
 
-http.listen(port, () => {
+server.listen(port, () => {
   logger.info(`App is running on port: ${port}`);
 });

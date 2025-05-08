@@ -1,6 +1,5 @@
 import { LogLevel } from "../interfaces/logLevel";
-
-const fs = require("fs");
+import fs from "fs";
 
 const logsDir = "./logs";
 
@@ -26,7 +25,7 @@ function doLog(level: LogLevel, ...args: unknown[]) {
   fs.appendFileSync("./logs/backend.log", line);
 }
 
-module.exports = {
+export const logger = {
   debug(...args: unknown[]) {
     // if (process.env.NODE_NEV === 'production') return
     doLog(LogLevel.Debug, ...args);
